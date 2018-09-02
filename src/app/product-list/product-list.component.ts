@@ -51,6 +51,11 @@ export class ProductListComponent implements OnInit{
     this.filterProducts = this.products;
     this.listFilter = 'cart'
   }
+
+  onRatingClicked(message:string):void{
+    this.pagetittle = `Lista de Productos ${message}`;
+  }
+
   performFilter(filterBy:string):IProduct[]{
     filterBy = filterBy.toLowerCase(); //Convertirmos los criterios de filtros a minusculas Se hace para no tener problemas con mayusculas
     return this.products.filter((product:IProduct) => //Decolvemos la lista filtrada
